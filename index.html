@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple y700 Slider</title>
+    <link rel="stylesheet type="text/css" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Yeezy 700.</a>
+      <ul>
+        <li><a href="#">Version 1</a></li>
+        <li><a href="#">Version 2</a></li>
+        <li><a href="#">Version 3</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </header>
+    <section class="banner">
+      <div class="imageBox">
+        <img src="./images/y700v1.jpg" class="active" />
+        <img src="./images/y700v2.jpg" />
+        <img src="./images/y700v3.jpg" />
+        <img src="./images/about2.jpeg" />
+      </div>
+      <ul class="controls">
+        <li></li>
+        <li onclick="nextSlide()"></li>
+      </ul>
+    </section>
+
+    <script type="text/javascript">
+      const imgBox = document.querySelector('.imgBox')
+      const slides = imgBox.getElementsByTagName('img')
+      var i = 0
+
+      function nextSlide() {
+        slides[i].classList.remove('active')
+        i = (i + 1) % slides.length
+        slides[i].classList.add('active')
+      }
+    </script>
+  </body>
+</html>
