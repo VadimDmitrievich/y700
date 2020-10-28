@@ -10,27 +10,68 @@
     <header>
       <a href="#" class="logo">Yeezy 700.</a>
       <ul>
-        <li><a href="#">Version 1</a></li>
-        <li><a href="#">Version 2</a></li>
-        <li><a href="#">Version 3</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="#v1">Version 1</a></li>
+        <li><a href="#v2">Version 2</a></li>
+        <li><a href="#v3">Version 3</a></li>
       </ul>
     </header>
     <section class="banner">
       <div class="imageBox">
-        <img src="./images/y700v1.jpg" class="active" />
-        <img src="./images/y700v2.jpg" />
-        <img src="./images/y700v3.jpg" />
-        <img src="./images/about2.jpeg" />
+        <img src="./images/y700v1.jpg" class="active" /><a id="v1"></a>
+        <img src="./images/y700v2.jpg" /> <a id="v2"></a>
+        <img src="./images/y700v3.jpeg" /> <a id="v3"></a>
       </div>
+
+      <div class="contentBox">
+        <div class="active">
+          <h2>Slide text One</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero
+            soluta numquam quam exercitationem similique, eveniet consectetur
+            molestias veniam distinctio tempora!
+          </p>
+          <a href="#">Details</a>
+        </div>
+
+        <div>
+          <h2>Slide text Two</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero
+            soluta numquam quam exercitationem similique, eveniet consectetur
+            molestias veniam distinctio tempora!
+          </p>
+          <a href="#">Details</a>
+        </div>
+
+        <div>
+          <h2>Slide text Three</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero
+            soluta numquam quam exercitationem similique, eveniet consectetur
+            molestias veniam distinctio tempora!
+          </p>
+          <a href="#">Details</a>
+        </div>
+
+        <div>
+          <h2>Slide text About</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero
+            soluta numquam quam exercitationem similique, eveniet consectetur
+            molestias veniam distinctio tempora!
+          </p>
+          <a href="#">Details</a>
+        </div>
+      </div>
+
       <ul class="controls">
-        <li></li>
-        <li onclick="nextSlide()"></li>
+        <li onclick="prevSlide();prevSlideText()"></li>
+        <li onclick="nextSlide();nextSlideText()"></li>
       </ul>
     </section>
 
     <script type="text/javascript">
-      const imgBox = document.querySelector('.imgBox')
+      const imgBox = document.querySelector('.imageBox')
       const slides = imgBox.getElementsByTagName('img')
       var i = 0
 
@@ -38,6 +79,28 @@
         slides[i].classList.remove('active')
         i = (i + 1) % slides.length
         slides[i].classList.add('active')
+      }
+
+      function prevSlide() {
+        slides[i].classList.remove('active')
+        i = (i - 1 + slides.length) % slides.length
+        slides[i].classList.add('active')
+      }
+
+      const contentBox = document.querySelector('.contentBox')
+      const slidesText = contentBox.getElementsByTagName('div')
+      var j = 0
+
+      function nextSlideText() {
+        slidesText[j].classList.remove('active')
+        j = (j + 1) % slidesText.length
+        slidesText[j].classList.add('active')
+      }
+
+      function prevSlideText() {
+        slidesText[j].classList.remove('active')
+        j = (j - 1 + slidesText.length) % slidesText.length
+        slidesText[j].classList.add('active')
       }
     </script>
   </body>

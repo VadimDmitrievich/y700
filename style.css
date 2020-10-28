@@ -6,7 +6,7 @@
   font-family: 'Poppins', sans-serif;
 }
 body {
-  background-color: red;
+  background-color: #ff0;
 }
 header {
   position: fixed;
@@ -20,7 +20,7 @@ header {
 }
 header .logo {
   position: relative;
-  color: #fff;
+  color: black;
   font-weight: 700;
   font-size: 2em;
   text-decoration: none;
@@ -37,7 +37,7 @@ header ul li {
   margin-left: 40px;
 }
 header ul li a {
-  color: #fff;
+  color: black;
   text-decoration: none;
 }
 .banner {
@@ -60,7 +60,7 @@ header ul li a {
   height: 100vh;
   object-fit: cover;
   opacity: 0;
-  transition: 0.5s;
+  transition: 0.2s;
   background-position: center;
 }
 .banner .imageBox img.active {
@@ -85,7 +85,7 @@ header ul li a {
   cursor: pointer;
 }
 .controls li:hover {
-  background-color: wheat;
+  background-color: greenyellow;
 }
 .controls li:before {
   content: '';
@@ -98,4 +98,38 @@ header ul li a {
 }
 .controls li:nth-child(2):before {
   transform: rotate(225deg);
+}
+.contentBox {
+  position: absolute;
+  bottom: 0;
+  max-width: 700px;
+}
+.contentBox div {
+  display: none;
+}
+.contentBox div.active {
+  display: block;
+  padding-left: 30px;
+  padding-left: 100px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.contentBox div h2 {
+  color: #fff;
+  font-size: 2em;
+}
+.contentBox div p {
+  color: #fff;
+  font-size: 1.1em;
+}
+.contentBox div a {
+  color: #111;
+  font-size: 1.1em;
+  display: inline-block;
+  padding: 10px 30px;
+  background: #fff;
+  padding: 10px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
